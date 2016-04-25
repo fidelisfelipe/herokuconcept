@@ -3,17 +3,21 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 /**
  * @author Fidelis.Guimaraes
  */
-public class SocketServer extends HttpServlet{
+public class SocketServer {
+	
+	/**
+	 * UID
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public static void main(String[] args) throws IOException {
+		new ServerSocket();
+	}
 
-	public void init() {
+	public SocketServer(){
 		Integer porta = Integer.valueOf(System.getenv("PORT") != null ? System.getenv("PORT") : "8000");
 
 		ServerSocket escuta = null;

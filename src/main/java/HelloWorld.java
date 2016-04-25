@@ -7,29 +7,22 @@ import org.eclipse.jetty.servlet.*;
  * @author Fidelis.Guimaraes
  */
 public class HelloWorld extends HttpServlet {
-	 
+	
 	 /**
 	 * UID
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	SocketServer server = new SocketServer();
-	
-	public HelloWorld() throws Exception {
-		server.init();
-	}
-	
-	
 	@Override
 	 protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
-			
+		
 		resp.getWriter().print("Hello Heroku from Java Get!\n");
 	 }
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		new SocketServer();
 		resp.getWriter().print("Hello Heroku from Java Post!\n");
 	}
 	
@@ -47,7 +40,7 @@ public class HelloWorld extends HttpServlet {
 		context.setContextPath("/");
 		server.setHandler(context);
 		//mapeamento do servlet no jetty capturando todas as requisições
-		context.addServlet(new ServletHolder(new SocketServer()),"/*");
+		context.addServlet(new ServletHolder(new HelloWorld()),"/*");
 		
 		//inicio do servidor, por ser uma aplicação autosuficiente(pre-requisito do Heroku)
 		//a própria aplicação é um container e assim adicionamos nela o servlet

@@ -34,9 +34,13 @@ public class SocketServer extends HttpServlet {
 			while (true) {
 				Socket cliente = escuta.accept();
 				System.out.println("*** conexao aceita de (remoto): " + cliente.getRemoteSocketAddress());
-				ObjectInputStream ois =
+				ObjectInputStream ois = null;
+				try{
+					ois =
 						new ObjectInputStream(cliente.getInputStream());
-				
+				}catch(IOException e){
+					
+				}
 				while(true){
 					try{
 						String data = ois.readObject().toString();

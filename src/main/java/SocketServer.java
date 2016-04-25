@@ -14,7 +14,7 @@ public class SocketServer {
 	private static final long serialVersionUID = 1L;
 	
 	public static void main(String[] args) throws IOException {
-		new ServerSocket();
+		System.out.println("init socker server... :)");
 	}
 
 	public SocketServer(){

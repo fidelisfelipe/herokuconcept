@@ -19,13 +19,13 @@ public class HelloWorld extends HttpServlet {
 		
 
 		
-		resp.getWriter().print("Hello Heroku from Java Post!\n");
+		resp.getWriter().print("Hello Heroku from Java Get!\n");
 	 }
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		resp.getWriter().print("Hello Heroku from Java Get!\n");
+		resp.getWriter().print("Hello Heroku from Java Post!\n");
 	}
 	
 	 public static void main(String[] args) throws Exception{

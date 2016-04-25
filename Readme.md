@@ -36,4 +36,6 @@ $echo %PORT%
 
 java -cp target\classes;"target\dependency\*" HelloWorld
 
+#crie arquivo Procfile na raiz do projetocom seguinte conteúdo
+web: java -cp target/classes:target/dependency/* HelloWorld
 

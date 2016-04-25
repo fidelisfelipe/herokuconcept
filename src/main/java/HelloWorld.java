@@ -22,7 +22,6 @@ public class HelloWorld extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		new SocketServer();
 		resp.getWriter().print("Hello Heroku from Java Post!\n");
 	}
 	

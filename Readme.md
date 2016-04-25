@@ -21,7 +21,7 @@ Enable Automatc Deploys
 ##criar diretório parão maven
 $mkdir -p src/main/java/
 
-##criar classe Test com servidor embutido ouvindo requisição
+##criar classe Test com servidor embutido ouvindo requisição - embedded container - The Twelve-Factor App by  Adam Wiggins is Heroku Fundator
 
 ##criar pom.xml na raiz do projeto
 
@@ -38,4 +38,19 @@ java -cp target\classes;"target\dependency\*" HelloWorld
 
 #crie arquivo Procfile na raiz do projetocom seguinte conteúdo
 web: java -cp target/classes:target/dependency/* HelloWorld
+
+#escalar app
+$heroku ps:scale web=2 
+
+#Mais sobre o Heroku
+##heroku addon:list //lista de complementos
+$heroku apps:errors //erros da aplicação nas ultimas 24hrs
+$heroku apps:info //informações
+$heroku config //variáveis de ambiente disponíveis para a aplicação
+
+#LogsPlex - feature de logs do heroku para apps distribuídas
+$heroku logs -t
+
+
+
 

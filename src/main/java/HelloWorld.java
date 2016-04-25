@@ -16,8 +16,18 @@ public class HelloWorld extends HttpServlet {
 	@Override
 	 protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
-		resp.getWriter().print("Hello Heroku from Java!\n");
+		
+
+		
+		resp.getWriter().print("Hello Heroku from Java Post!\n");
 	 }
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.getWriter().print("Hello Heroku from Java Get!\n");
+	}
+	
 	 public static void main(String[] args) throws Exception{
 		//Criando Server Jetty embarcado
 		//

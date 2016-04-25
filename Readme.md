@@ -47,10 +47,20 @@ $heroku ps:scale web=2
 $heroku apps:errors //erros da aplicação nas ultimas 24hrs
 $heroku apps:info //informações
 $heroku config //variáveis de ambiente disponíveis para a aplicação
+$heroku releases // exibe todas as manutenções feitas na app.
+$heroku releases:rollback v3 //reverte para versão 3 da app
 
 #LogsPlex - feature de logs do heroku para apps distribuídas
 $heroku logs -t
 
+#Modo Manutenção Heroku
+$heroku maintenance:on
+$heroku maintenance:off
 
+##Customizando página de manutenção
+$heroku config:set MAINTENANCE_PAGE_URL=https://herokuconcept.herokuapp.com/maintenance.html
+
+#Add Plugin Heroku - Eclipse
+##http://eclipse-plugin.herokuapp.com
 
 

@@ -16,8 +16,24 @@ $heroku open
 Heroku>DashBoard>Deploy>GitHub>Search you repo>connect
 Enable Automatc Deploys
 
+#adicionar natureza java/mvn
 
+##criar diretório parão maven
+$mkdir -p src/main/java/
 
+##criar classe Test com servidor embutido ouvindo requisição
 
+##criar pom.xml na raiz do projeto
+
+##buil com mvn
+
+##set variavel de ambiente para executar a aplicação em alguma porta
+$SET PORT=8000
+confirme o valor configurado com:
+$echo %PORT%
+
+##execute a aplicação
+
+java -cp target\classes;"target\dependency\*" HelloWorld
 
 

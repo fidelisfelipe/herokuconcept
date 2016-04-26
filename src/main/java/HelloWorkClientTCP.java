@@ -16,7 +16,7 @@ public class HelloWorkClientTCP {
 		Integer porta = Integer.valueOf(System.getenv("PORT") != null ? System.getenv("PORT") : "8000");
 		
 		try {
-			String hostRemote = "http://herokuconcept.herokuapp.com";
+			String hostRemote = "herokuconcept.herokuapp.com";
 			String hostLocal = "localhost";
 			socket = new Socket(hostRemote, 80);
 			ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());

@@ -1,5 +1,7 @@
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.StreamCorruptedException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -36,20 +38,27 @@ public class SocketServer extends HttpServlet {
 				System.out.println("*** conexao aceita de (remoto): " + cliente.getRemoteSocketAddress());
 				ObjectInputStream ois =
 						new ObjectInputStream(cliente.getInputStream());
-				
 				while(true){
 					try{
-						String data = ois.readObject().toString();
-						System.out.println("data: "+data);
+						Object data = ois.readObject();
+						System.out.println("data: "+data.toString());
 						
+					}catch(EOFException e){
+						System.out.println("no data 1");
+						break;
 					}catch(IOException | ClassNotFoundException e){
+						System.out.println("no data 2");
 						break;
 					}
 				
 				}
 				
+				
 			}
-
+			
+		} catch (StreamCorruptedException e){
+			e.printStackTrace();
+			System.out.println("Stream Inválida: " + e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Erro na escuta: " + e.getMessage());

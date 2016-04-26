@@ -20,7 +20,7 @@ public class HelloWorkClientTCP {
 			String hostLocal = "localhost";
 			socket = new Socket(hostLocal, 8000);
 			ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-			oos.writeObject("teste client");
+//			oos.writeObject("teste client");
 		} catch (UnknownHostException e) {
 			System.out.println("UnknownHost: "+e.getMessage());
 		}catch (EOFException e) {

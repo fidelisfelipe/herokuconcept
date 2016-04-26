@@ -60,8 +60,7 @@ public class SocketServer extends HttpServlet {
 			e.printStackTrace();
 			System.out.println("Stream Inválida: " + e.getMessage());
 		} catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("Erro na escuta: " + e.getMessage());
+			System.out.println("Erro na escuta: " + e.getLocalizedMessage());
 		}
 
 	}

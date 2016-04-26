@@ -18,6 +18,8 @@ public class HelloWorld extends HttpServlet {
 		throws ServletException, IOException {
 		
 		resp.getWriter().print("Hello Heroku from Java Get!\n");
+		
+		HelloWorkClientTCP.main(null);
 	 }
 	
 	@Override

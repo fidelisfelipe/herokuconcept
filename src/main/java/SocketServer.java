@@ -51,6 +51,7 @@ public class SocketServer extends HttpServlet {
 			}
 
 		} catch (IOException e) {
+			e.printStackTrace();
 			System.out.println("Erro na escuta: " + e.getMessage());
 		}
 
